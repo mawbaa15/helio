@@ -1,0 +1,18 @@
+{
+  "name": "landing_page",
+  "version": "1.0.0",
+  "description": "Ce projet est une landing page moderne, performante et hautement optimisée pour la conversion, réalisée pour le **Studio Hélio**, un studio de Pilates & mobilité haut de gamme à Bordeaux.",
+  "main": "script.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

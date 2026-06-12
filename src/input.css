@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F4EFE9;
+  --color-deep: #2A2622;
+  --color-terracotta: #C66B4A;
+  --color-terracotta-dark: #A85539;
+  --color-neutral: #E8E2DA;
+  --color-neutral-dark: #D4CCC0;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: Inter, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background-color: #F4EFE9; color: #2A2622; }
+.font-serif { font-family: 'Playfair Display', serif; }
+
+/* Accordion transition */
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; }
+.faq-answer.open { max-height: 200px; }
+
+/* Mobile menu transition */
+#mobile-menu { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+#mobile-menu.open { max-height: 400px; opacity: 1; }
+
+/* Focus visible for accessibility */
+*:focus-visible { outline: 2px solid #C66B4A; outline-offset: 2px; border-radius: 4px; }
+
+/* Form error state */
+.input-error { border-color: #C66B4A !important; }
+.error-msg { color: #C66B4A; font-size: 0.875rem; margin-top: 0.25rem; display: none; }
+.error-msg.visible { display: block; }
+
+/* Smooth fade in on scroll */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Custom select styling */
+#form-slot {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%232A2622%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.25rem;
+}
