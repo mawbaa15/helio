@@ -9,9 +9,24 @@ Ce projet est une landing page moderne, performante et hautement optimisée pour
 Pour ce projet, le choix s'est porté sur une stack **Vanilla HTML5, CSS3 et JavaScript Moderne** :
 - **Performance & Conversion** : Une landing page doit charger instantanément. L'absence de framework lourd (comme React ou Vue) permet d'éliminer tout overhead de bundle, garantissant un temps de chargement ultra-rapide (idéal pour la conversion et le SEO).
 - **Maintenance Facilitée** : Les responsabilités sont clairement séparées entre le balisage ([index.html](./index.html)), la présentation ([styles.css](./styles.css)) et le comportement dynamique ([script.js](./script.js)).
-- **Tailwind CSS (via CDN)** : Utilisé pour intégrer rapidement un design système réactif et cohérent, tout en évitant d'écrire des milliers de lignes de CSS utilitaire à la main.
+- **Tailwind CSS CLI v4 (Production ready)** : Le projet intègre Tailwind CSS v4 compilé localement par la CLI officielle. Les extensions de thème (couleurs de marque, typographies) sont configurées dans [src/input.css](./src/input.css) via la nouvelle directive `@theme`. Le fichier final [styles.css](./styles.css) est minifié à la volée, ce qui supprime tout le CSS inutilisé pour un chargement instantané.
 
 ---
+
+## ⚙️ Compilation CSS pour la Production
+
+Le projet utilise la CLI officielle de Tailwind CSS v4 pour compiler et minifier les styles.
+
+### 1. Installer les dépendances
+```bash
+npm install
+```
+
+### 2. Compiler et minifier le CSS
+```bash
+npm run build:css
+```
+La compilation analyse les fichiers du projet (comme `./index.html`) pour générer uniquement le CSS nécessaire dans [styles.css](./styles.css).
 
 ## 📐 Décisions de Structure & Design
 
@@ -40,7 +55,7 @@ Si nous disposions de plus de temps pour faire évoluer ce produit :
 
 ## 📚 Ressources Empruntées (Crédits)
 
-- **Framework CSS** : [Tailwind CSS CDN](https://tailwindcss.com/)
+- **Framework CSS** : [Tailwind CSS v4](https://tailwindcss.com/)
 - **Polices** : *Playfair Display* et *Inter* via le CDN Fontsource
 - **Icônes** : Tracés SVG inspirés de la bibliothèque [Heroicons](https://heroicons.com/)
 - **Images** : Images d'illustration haute résolution (sources libres de droits)
