@@ -7,34 +7,173 @@
   --color-terracotta-dark: #A85539;
   --color-neutral: #E8E2DA;
   --color-neutral-dark: #D4CCC0;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F0E6D2;
+  --color-sage: #9CA89D;
 
   --font-serif: "Playfair Display", serif;
   --font-sans: Inter, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background-color: #F4EFE9; color: #2A2622; }
+body { 
+  font-family: 'Inter', sans-serif; 
+  background-color: #F4EFE9; 
+  color: #2A2622;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 35px,
+      rgba(196, 171, 148, 0.03) 35px,
+      rgba(196, 171, 148, 0.03) 70px
+    );
+}
 .font-serif { font-family: 'Playfair Display', serif; }
 
-/* Accordion transition */
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; }
-.faq-answer.open { max-height: 200px; }
+/* ============ ANIMATIONS LUXE & SOPHISTIQUÉES ============ */
+
+/* Parallax effect pour les images */
+.parallax-img { will-change: transform; transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1); }
+
+/* Reveal text effect - lettre par lettre */
+.reveal-text { position: relative; overflow: hidden; }
+.reveal-text .word { display: inline-block; overflow: hidden; }
+.reveal-text .char { display: inline-block; opacity: 0; transform: translateY(40px); animation: char-reveal 0.6s ease-out forwards; }
+
+@keyframes char-reveal {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in sophistiqué au scroll */
+.fade-in { 
+  opacity: 0; 
+  transform: translateY(30px); 
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1); 
+}
+.fade-in.visible { 
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+/* Stagger animation pour les enfants */
+.fade-in.visible > * {
+  opacity: 1;
+  animation: stagger-in 0.8s ease-out forwards;
+}
+
+@keyframes stagger-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in.visible > :nth-child(1) { animation-delay: 0s; }
+.fade-in.visible > :nth-child(2) { animation-delay: 0.1s; }
+.fade-in.visible > :nth-child(3) { animation-delay: 0.2s; }
+.fade-in.visible > :nth-child(4) { animation-delay: 0.3s; }
+.fade-in.visible > :nth-child(5) { animation-delay: 0.4s; }
+
+/* Hover effect card luxe - 3D Transform */
+.card-hover {
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transform-style: preserve-3d;
+}
+
+.card-hover:hover {
+  transform: translateY(-12px) rotateX(5deg);
+  box-shadow: 0 30px 60px rgba(42, 38, 34, 0.15);
+}
+
+/* Hover effect plus subtil pour les éléments inline */
+.hover-lift {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  color: #D4AF37;
+}
+
+/* Border animation */
+.border-animate::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #D4AF37, #C66B4A);
+  transition: width 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.border-animate:hover::after {
+  width: 100%;
+}
+
+/* Accordion transition fluide */
+.faq-answer { 
+  max-height: 0; 
+  overflow: hidden; 
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1); 
+}
+.faq-answer.open { 
+  max-height: 300px; 
+}
 
 /* Mobile menu transition */
-#mobile-menu { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
-#mobile-menu.open { max-height: 400px; opacity: 1; }
+#mobile-menu { 
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1); 
+  max-height: 0; 
+  opacity: 0; 
+  overflow: hidden; 
+}
+#mobile-menu.open { 
+  max-height: 500px; 
+  opacity: 1; 
+}
 
 /* Focus visible for accessibility */
-*:focus-visible { outline: 2px solid #C66B4A; outline-offset: 2px; border-radius: 4px; }
+*:focus-visible { 
+  outline: 2px solid #D4AF37; 
+  outline-offset: 3px; 
+  border-radius: 4px;
+}
 
 /* Form error state */
-.input-error { border-color: #C66B4A !important; }
-.error-msg { color: #C66B4A; font-size: 0.875rem; margin-top: 0.25rem; display: none; }
+.input-error { 
+  border-color: #C66B4A !important; 
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.error-msg { 
+  color: #C66B4A; 
+  font-size: 0.875rem; 
+  margin-top: 0.25rem; 
+  display: none; 
+  animation: error-reveal 0.3s ease-out;
+}
+
+@keyframes error-reveal {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .error-msg.visible { display: block; }
 
-/* Smooth fade in on scroll */
-.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+/* Input focus states avec transition dorée */
+input:focus, 
+textarea:focus, 
+select:focus {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
 
 /* Custom select styling */
 #form-slot {
@@ -42,4 +181,32 @@ body { font-family: 'Inter', sans-serif; background-color: #F4EFE9; color: #2A26
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 1.25rem;
+}
+
+/* Smooth count up animation pour les chiffres */
+.count-up {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Floating animation subtile */
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-element {
+  animation: float-subtle 6s ease-in-out infinite;
+}
+
+/* Background decorative elements */
+.bg-gradient-luxury {
+  background: linear-gradient(135deg, rgba(244, 239, 233, 1) 0%, rgba(240, 230, 210, 0.5) 100%);
+}
+
+.section-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #D4CCC0 50%, transparent 100%);
+  margin: 60px 0;
 }

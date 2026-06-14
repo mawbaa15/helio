@@ -149,12 +149,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // === Scroll Fade-In Animation ===
+  // === Scroll Fade-In Animation avec Intersection Observer ===
   var fadeElements = document.querySelectorAll('.fade-in');
   
   var observerOptions = {
     root: null,
-    rootMargin: '0px',
+    rootMargin: '0px 0px -100px 0px',
     threshold: 0.1
   };
   
@@ -169,6 +169,66 @@ document.addEventListener('DOMContentLoaded', function() {
   
   for (var q = 0; q < fadeElements.length; q++) {
     observer.observe(fadeElements[q]);
+  }
+  
+  // === Parallax Effect pour Images ===
+  var parallaxImages = document.querySelectorAll('.parallax-img');
+  
+  if (parallaxImages.length > 0) {
+    window.addEventListener('scroll', function() {
+      parallaxImages.forEach(function(img) {
+        var rect = img.getBoundingClientRect();
+        var elementTop = rect.top;
+        var elementHeight = rect.height;
+        var windowHeight = window.innerHeight;
+        
+        // Element is in viewport
+        if (elementTop < windowHeight && elementTop + elementHeight > 0) {
+          var yPos = (elementTop / windowHeight) * 25;
+          img.style.transform = 'translateY(' + yPos + 'px)';
+        }
+      });
+    });
+  }
+  
+  // === Count-Up Animation pour Chiffres ===
+  function animateCounter(element, target, duration) {
+    var start = 0;
+    var increment = target / (duration / 16);
+    var current = start;
+    
+    var timer = setInterval(function() {
+      current += increment;
+      if (current >= target) {
+        element.textContent = target;
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current);
+      }
+    }, 16);
+  }
+  
+  var countElements = document.querySelectorAll('.count-up');
+  var countObserverOptions = { threshold: 0.5 };
+  var hasCountedUp = false;
+  
+  if (countElements.length > 0) {
+    var countObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !hasCountedUp) {
+          hasCountedUp = true;
+          countElements.forEach(function(el) {
+            var target = parseInt(el.textContent);
+            if (!isNaN(target)) {
+              animateCounter(el, target, 1200);
+            }
+          });
+          countObserver.disconnect();
+        }
+      });
+    }, countObserverOptions);
+    
+    countObserver.observe(countElements[0]);
   }
   
 });
