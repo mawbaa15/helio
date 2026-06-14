@@ -1,722 +1,574 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studio Hélio — Pilates & Mobilité à Bordeaux</title>
-  <meta name="description" content="Studio de Pilates & mobilité à Bordeaux. Petits groupes, coachs diplômés, suivi personnalisé. Réservez votre premier cours d'essai gratuit." />
-  
+  <title>Studio Hélio — Pilates &amp; Mobilité à Bordeaux</title>
+  <meta name="description" content="Studio de Pilates &amp; mobilité à Bordeaux. Petits groupes (6 max), coachs diplômés, suivi personnalisé. Réservez votre premier cours d'essai gratuit." />
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Studio Hélio — Pilates & Mobilité à Bordeaux" />
+  <meta property="og:title" content="Studio Hélio — Pilates &amp; Mobilité à Bordeaux" />
   <meta property="og:description" content="Renforce ton corps sans le casser. Pilates en petits groupes, encadré, pour gagner en force, souplesse et sérénité." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
-  
+
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="helio_favicon/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="helio_favicon/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="helio_favicon/favicon-16x16.png" />
   <link rel="apple-touch-icon" href="helio_favicon/apple-touch-icon.png" />
   <link rel="manifest" href="helio_favicon/site.webmanifest" />
-  <meta name="theme-color" content="#ffffff" />
-  
-  <!-- Fonts via Fontsource CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/playfair-display@5.0.0/index.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.0/index.css" />
-  
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body class="antialiased">
+  <meta name="theme-color" content="#3D5A3E" />
 
-  <!-- ==================== HEADER ==================== -->
-  <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-neutral">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 sm:h-20">
+  <!-- Google Fonts: Cormorant Garamond + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="helio.css" />
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="nav hero-mode" id="main-nav" role="banner">
+    <div class="container">
+      <div class="nav__inner">
+
         <!-- Logo -->
-        <a href="#" class="font-serif text-2xl sm:text-3xl font-bold text-deep tracking-tight">
-          Studio Hélio
-        </a>
-        
+        <a href="#" class="nav__logo" aria-label="Studio Hélio — retour à l'accueil">Studio Hélio</a>
+
         <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="#piliers" class="text-deep/80 hover:text-terracotta transition-colors text-sm font-medium">Bénéfices</a>
-          <a href="#methode" class="text-deep/80 hover:text-terracotta transition-colors text-sm font-medium">Méthode</a>
-          <a href="#tarifs" class="text-deep/80 hover:text-terracotta transition-colors text-sm font-medium">Tarifs</a>
-          <a href="#temoignages" class="text-deep/80 hover:text-terracotta transition-colors text-sm font-medium">Témoignages</a>
-          <a href="#faq" class="text-deep/80 hover:text-terracotta transition-colors text-sm font-medium">FAQ</a>
-          <a href="#contact" class="bg-terracotta text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-terracotta-dark transition-colors">
-            Réserver
-          </a>
+        <nav aria-label="Navigation principale">
+          <ul class="nav__links">
+            <li><a href="#piliers" class="nav__link">Bénéfices</a></li>
+            <li><a href="#methode" class="nav__link">Méthode</a></li>
+            <li><a href="#tarifs" class="nav__link">Tarifs</a></li>
+            <li><a href="#temoignages" class="nav__link">Témoignages</a></li>
+            <li><a href="#faq" class="nav__link">FAQ</a></li>
+            <li><a href="#contact" class="nav__cta">Réserver</a></li>
+          </ul>
         </nav>
-        
+
         <!-- Mobile Burger -->
-        <button id="burger-btn" class="md:hidden p-2 text-deep" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
-          <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
+        <button class="nav__burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
-      
-      <!-- Mobile Menu -->
-      <nav id="mobile-menu" class="md:hidden border-t border-neutral" aria-label="Menu mobile">
-        <div class="px-4 py-4 space-y-3">
-          <a href="#piliers" class="block text-deep/80 hover:text-terracotta transition-colors py-2 text-base font-medium">Bénéfices</a>
-          <a href="#methode" class="block text-deep/80 hover:text-terracotta transition-colors py-2 text-base font-medium">Méthode</a>
-          <a href="#tarifs" class="block text-deep/80 hover:text-terracotta transition-colors py-2 text-base font-medium">Tarifs</a>
-          <a href="#temoignages" class="block text-deep/80 hover:text-terracotta transition-colors py-2 text-base font-medium">Témoignages</a>
-          <a href="#faq" class="block text-deep/80 hover:text-terracotta transition-colors py-2 text-base font-medium">FAQ</a>
-          <a href="#contact" class="block bg-terracotta text-white text-center px-5 py-3 rounded-full text-base font-semibold hover:bg-terracotta-dark transition-colors mt-2">
-            Réserver mon cours
-          </a>
-        </div>
-      </nav>
     </div>
+
+    <!-- Mobile Menu -->
+    <nav class="nav__mobile" id="mobile-menu" aria-label="Menu mobile">
+      <ul>
+        <li><a href="#piliers">Bénéfices</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#temoignages">Témoignages</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="nav__mobile-cta">Réserver</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
+
     <!-- ==================== HERO ==================== -->
-    <section class="relative overflow-hidden">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-28">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div class="fade-in">
-            <span class="inline-block bg-terracotta/10 text-terracotta px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-              Pilates & Mobilité · Bordeaux
-            </span>
-            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-deep leading-tight mb-6">
-              Renforce ton corps<br/>sans le casser.
-            </h1>
-            <p class="text-lg sm:text-xl text-deep/70 leading-relaxed mb-8 max-w-lg">
-              Pilates en petits groupes (6 max), encadré, pour gagner en force, souplesse et sérénité.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="#contact" class="bg-terracotta text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-terracotta-dark transition-all text-center shadow-lg shadow-terracotta/20">
-                Réserver mon cours d'essai
-              </a>
-              <a href="#methode" class="border-2 border-deep/20 text-deep px-8 py-4 rounded-full text-base font-semibold hover:border-terracotta hover:text-terracotta transition-all text-center">
-                Découvrir la méthode
-              </a>
-            </div>
-            <div class="flex items-center gap-6 mt-10 pt-8 border-t border-neutral">
-              <div>
-                <p class="font-serif text-3xl font-bold text-deep"><span class="count-up">6</span></p>
-                <p class="text-sm text-deep/60">élèves max / séance</p>
-              </div>
-              <div class="w-px h-10 bg-neutral-dark"></div>
-              <div>
-                <p class="font-serif text-3xl font-bold text-deep"><span class="count-up">3</span></p>
-                <p class="text-sm text-deep/60">coachs certifiés</p>
-              </div>
-              <div class="w-px h-10 bg-neutral-dark"></div>
-              <div>
-                <p class="font-serif text-3xl font-bold text-deep"><span class="count-up">400</span>h</p>
-                <p class="text-sm text-deep/60">de formation</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="fade-in relative">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl card-hover">
-              <img 
-                src="https://image.qwenlm.ai/public_source/ff676d28-1aa0-44e2-b7fe-a7bb470402dd/112c4fdfd-2fe3-470a-b1d6-057125bcee4e.png" 
-                alt="Séance de Pilates au Studio Hélio à Bordeaux, femme pratiquant sur un reformer dans un studio premium aux tons crème et terracotta" 
-                class="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover parallax-img"
-                loading="eager"
-              />
-              <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm px-5 py-3 rounded-2xl shadow-lg">
-                <p class="text-sm font-semibold text-deep">1er cours offert</p>
-                <p class="text-xs text-deep/60">Sans engagement</p>
-              </div>
-            </div>
-            <!-- Decorative element -->
-            <div class="absolute -top-4 -right-4 w-24 h-24 bg-terracotta/20 rounded-full blur-2xl -z-10"></div>
-            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-neutral-dark/40 rounded-full blur-2xl -z-10"></div>
-          </div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__content">
+
+          <span class="t-label hero__label">Pilates &amp; Mobilité · Bordeaux</span>
+
+          <h1 class="hero__h1" id="hero-title">
+            <span class="line"><span>Renforce ton corps</span></span>
+            <span class="line"><span>sans le casser.</span></span>
+          </h1>
+
+          <div class="hero__sep" aria-hidden="true"></div>
+
+          <p class="hero__sub">
+            Petits groupes (6 max), encadré, pour gagner en force,&nbsp;souplesse et sérénité.
+          </p>
+
+          <a href="#contact" class="hero__cta" id="hero-cta">
+            Réserver mon cours d'essai
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Hero image débordant -->
+        <div class="hero__img-wrap" aria-hidden="true">
+          <img
+            src="media/vue-studio.png"
+            alt="Vue du Studio Hélio à Bordeaux — espace lumineux, reformers en perspective, tons crème et bois naturel"
+            loading="eager"
+            fetchpriority="high"
+          />
         </div>
       </div>
     </section>
 
-    <!-- ==================== PILIERS / BÉNÉFICES ==================== -->
-    <section id="piliers" class="py-20 sm:py-28 bg-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
-          <span class="text-terracotta font-semibold text-sm uppercase tracking-wider">Pourquoi Studio Hélio</span>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mt-3 mb-6">
-            Trois piliers pour<br/>ta transformation
+    <!-- ==================== MARQUEE BANDE DE PREUVE ==================== -->
+    <div class="marquee-section" aria-label="Chiffres clés du studio">
+      <div class="marquee-inner" aria-hidden="true">
+        <!-- Duplicated for seamless loop -->
+        <span class="marquee-item">6 élèves max <span class="marquee-diamond">⬡</span></span>
+        <span class="marquee-item">3 coachs certifiés <span class="marquee-diamond">⬡</span></span>
+        <span class="marquee-item">+400h de formation <span class="marquee-diamond">⬡</span></span>
+        <span class="marquee-item">Bordeaux depuis 2022 <span class="marquee-diamond">⬡</span></span>
+        <span class="marquee-item">1er cours offert <span class="marquee-diamond">⬡</span></span>
+        <span class="marquee-item">6 élèves max <span class="marquee-diamond">⬡</span></span>
+        <span class="marquee-item">3 coachs certifiés <span class="marquee-diamond">⬡</span></span>
+        <span class="marquee-item">+400h de formation <span class="marquee-diamond">⬡</span></span>
+        <span class="marquee-item">Bordeaux depuis 2022 <span class="marquee-diamond">⬡</span></span>
+        <span class="marquee-item">1er cours offert <span class="marquee-diamond">⬡</span></span>
+      </div>
+    </div>
+
+    <!-- ==================== PILIERS ==================== -->
+    <section class="piliers" id="piliers" aria-labelledby="piliers-title">
+      <div class="container">
+
+        <header class="piliers__header reveal">
+          <span class="t-label">Pourquoi Studio Hélio</span>
+          <h2 class="piliers__h2" id="piliers-title">
+            Trois piliers pour<br/>ta transformation.
           </h2>
-          <p class="text-deep/70 text-lg">
-            Une approche premium du mouvement, pensée pour durer.
-          </p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Pillar 1 -->
-          <div class="fade-in bg-gradient-to-br from-cream to-gold-light rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300 card-hover">
-            <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-              </svg>
-            </div>
-            <h3 class="font-serif text-2xl font-bold text-deep mb-3">Petits groupes (6 max)</h3>
-            <p class="text-deep/70 leading-relaxed">
-              Chaque mouvement est corrigé individuellement. Zéro blessure, 100% d'attention.
+        </header>
+
+        <div class="piliers__grid reveal reveal-delay-1">
+          <!-- Card 1 — Grande, fond vert -->
+          <article class="pilier-card pilier-card--dark">
+            <span class="pilier-num" aria-hidden="true">01</span>
+            <h3 class="pilier-card__title">Petits groupes</h3>
+            <p class="pilier-card__body">
+              6 élèves maximum par séance. Chaque mouvement est corrigé individuellement. Zéro blessure, 100&nbsp;% d'attention de ton coach.
             </p>
-          </div>
-          
-          <!-- Pillar 2 -->
-          <div class="fade-in bg-gradient-to-br from-cream to-gold-light rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300 card-hover">
-            <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-              </svg>
-            </div>
-            <h3 class="font-serif text-2xl font-bold text-deep mb-3">Coachs diplômés</h3>
-            <p class="text-deep/70 leading-relaxed">
-              3 coachs certifiés, chacun avec plus de 400h de formation. L'expertise au service de ta progression.
+          </article>
+
+          <!-- Card 2 -->
+          <article class="pilier-card">
+            <span class="pilier-num" aria-hidden="true">02</span>
+            <h3 class="pilier-card__title">Coachs diplômés</h3>
+            <p class="pilier-card__body">
+              3 coachs certifiés, chacun avec plus de 400&nbsp;h de formation. L'expertise au service de ta progression.
             </p>
-          </div>
-          
-          <!-- Pillar 3 -->
-          <div class="fade-in bg-gradient-to-br from-cream to-gold-light rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300 card-hover">
-            <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-              </svg>
-            </div>
-            <h3 class="font-serif text-2xl font-bold text-deep mb-3">Progrès mesurés</h3>
-            <p class="text-deep/70 leading-relaxed">
+          </article>
+
+          <!-- Card 3 -->
+          <article class="pilier-card">
+            <span class="pilier-num" aria-hidden="true">03</span>
+            <h3 class="pilier-card__title">Progrès mesurés</h3>
+            <p class="pilier-card__body">
               Bilan posture et mobilité à l'entrée, point d'étape tous les 2 mois. Tu vois, on mesure.
             </p>
-          </div>
+          </article>
         </div>
+
       </div>
     </section>
 
     <!-- ==================== MÉTHODE ==================== -->
-    <section id="methode" class="py-20 sm:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div class="fade-in order-2 lg:order-1">
-            <span class="text-terracotta font-semibold text-sm uppercase tracking-wider">Comment ça marche</span>
-            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mt-3 mb-6">
-              Trois étapes vers<br/>ton nouveau corps
-            </h2>
-            <p class="text-deep/70 text-lg mb-10">
-              Un parcours simple, pensé pour te mettre en confiance dès le premier jour.
-            </p>
-            
-            <div class="space-y-8">
-              <!-- Step 1 -->
-              <div class="flex gap-5">
-                <div class="flex-shrink-0 w-12 h-12 bg-terracotta text-white rounded-full flex items-center justify-center font-serif text-xl font-bold">1</div>
-                <div>
-                  <h3 class="font-serif text-xl font-bold text-deep mb-2">Tu réserves ton cours d'essai gratuit</h3>
-                  <p class="text-deep/70">Choisis ton créneau en quelques clics. Sans engagement, sans stress.</p>
-                </div>
-              </div>
-              
-              <!-- Step 2 -->
-              <div class="flex gap-5">
-                <div class="flex-shrink-0 w-12 h-12 bg-terracotta text-white rounded-full flex items-center justify-center font-serif text-xl font-bold">2</div>
-                <div>
-                  <h3 class="font-serif text-xl font-bold text-deep mb-2">On fait ton bilan posture/mobilité</h3>
-                  <p class="text-deep/70">15 minutes d'échange et d'analyse pour comprendre ton corps et tes objectifs.</p>
-                </div>
-              </div>
-              
-              <!-- Step 3 -->
-              <div class="flex gap-5">
-                <div class="flex-shrink-0 w-12 h-12 bg-terracotta text-white rounded-full flex items-center justify-center font-serif text-xl font-bold">3</div>
-                <div>
-                  <h3 class="font-serif text-xl font-bold text-deep mb-2">Tu rejoins un créneau qui te va</h3>
-                  <p class="text-deep/70">On suit tes progrès ensemble, à ton rythme, avec un accompagnement sur-mesure.</p>
-                </div>
-              </div>
+    <section class="methode" id="methode" aria-labelledby="methode-title">
+      <div class="container">
+
+        <img
+          class="methode__img reveal"
+          src="media/coach+cliente.jpg"
+          alt="Coach certifié du Studio Hélio corrigeant la posture d'une cliente lors d'un bilan personnalisé"
+          loading="lazy"
+        />
+
+        <h2 class="methode__h2 reveal" id="methode-title">
+          Comment ça marche.
+        </h2>
+
+        <ol class="methode__steps" aria-label="Les 3 étapes du parcours">
+          <li class="methode__step reveal reveal-delay-1">
+            <span class="step-num" aria-hidden="true">01</span>
+            <div class="step-content">
+              <h3 class="step-content__title">Tu réserves ton cours d'essai gratuit</h3>
+              <p class="step-content__body">Choisis ton créneau en quelques clics. Sans engagement, sans stress.</p>
             </div>
-            
-            <a href="#contact" class="inline-block mt-10 bg-terracotta text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-terracotta-dark transition-all shadow-lg shadow-terracotta/20">
-              Commencer mon parcours
-            </a>
-          </div>
-          
-          <div class="fade-in order-1 lg:order-2">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl card-hover">
-              <img 
-                src="https://image.qwenlm.ai/public_source/ff676d28-1aa0-44e2-b7fe-a7bb470402dd/1ec55323a-3213-4542-9fd6-bae980ab8b08.png" 
-                alt="Coach certifié du Studio Hélio corrigeant la posture d'une cliente lors d'un bilan personnalisé" 
-                class="w-full h-[400px] sm:h-[500px] object-cover parallax-img"
-                loading="lazy"
-              />
+          </li>
+          <li class="methode__step reveal reveal-delay-2">
+            <span class="step-num" aria-hidden="true">02</span>
+            <div class="step-content">
+              <h3 class="step-content__title">On fait ton bilan posture/mobilité</h3>
+              <p class="step-content__body">15 minutes d'échange et d'analyse pour comprendre ton corps et tes objectifs.</p>
             </div>
-          </div>
-        </div>
+          </li>
+          <li class="methode__step reveal reveal-delay-3">
+            <span class="step-num" aria-hidden="true">03</span>
+            <div class="step-content">
+              <h3 class="step-content__title">Tu rejoins un créneau qui te va</h3>
+              <p class="step-content__body">On suit tes progrès ensemble, à ton rythme, avec un accompagnement sur-mesure.</p>
+            </div>
+          </li>
+        </ol>
+
+        <a href="#contact" class="methode__cta reveal">
+          Commencer mon parcours
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+
       </div>
     </section>
 
     <!-- ==================== TARIFS ==================== -->
-    <section id="tarifs" class="py-20 sm:py-28 bg-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
-          <span class="text-terracotta font-semibold text-sm uppercase tracking-wider">Nos offres</span>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mt-3 mb-6">
-            Choisis ta formule
+    <section class="tarifs" id="tarifs" aria-labelledby="tarifs-title">
+      <div class="container">
+
+        <header class="tarifs__header reveal">
+          <span class="t-label tarifs__label">Nos offres</span>
+          <h2 class="tarifs__h2" id="tarifs-title">
+            Choisis ta formule.
           </h2>
-          <p class="text-deep/70 text-lg">
-            Des tarifs transparents, sans engagement. Commence par l'essai gratuit.
-          </p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        </header>
+
+        <div class="tarifs__grid">
+
           <!-- Découverte -->
-          <div class="fade-in bg-gradient-to-br from-cream to-white rounded-3xl p-8 border-2 border-transparent hover:border-gold/40 transition-all card-hover">
-            <h3 class="font-serif text-2xl font-bold text-deep mb-2">Découverte</h3>
-            <p class="text-deep/60 text-sm mb-6">Pour tester sans risque</p>
-            <div class="mb-8">
-              <span class="font-serif text-5xl font-bold text-deep">0€</span>
-            </div>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start gap-3 text-deep/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>1er cours offert</span>
+          <article class="tarif-card reveal">
+            <h3 class="tarif-card__name">Découverte</h3>
+            <p class="tarif-card__sub">Pour tester sans risque</p>
+            <p class="tarif-price">0€</p>
+            <p class="tarif-note">&nbsp;</p>
+            <ul class="tarif-card__list">
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                1er cours offert
               </li>
-              <li class="flex items-start gap-3 text-deep/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Bilan posture inclus</span>
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Bilan posture inclus
               </li>
-              <li class="flex items-start gap-3 text-deep/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Sans engagement</span>
-              </li>
-            </ul>
-            <a href="#contact" class="block w-full border-2 border-deep text-deep text-center px-6 py-3 rounded-full font-semibold hover:bg-deep hover:text-cream transition-all">
-              Réserver l'essai
-            </a>
-          </div>
-          
-          <!-- Carnet 10 (Popular) -->
-          <div class="fade-in bg-gradient-to-br from-deep to-neutral-dark rounded-3xl p-8 relative transform md:-translate-y-4 shadow-2xl card-hover">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gold to-terracotta text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-              Le plus choisi
-            </div>
-            <h3 class="font-serif text-2xl font-bold text-cream mb-2">Carnet 10 séances</h3>
-            <p class="text-cream/60 text-sm mb-6">Pour s'engager en douceur</p>
-            <div class="mb-8">
-              <span class="font-serif text-5xl font-bold text-cream">190€</span>
-              <span class="text-cream/60 text-sm block mt-1">valable 3 mois</span>
-            </div>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start gap-3 text-cream/90">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>10 séances de Pilates</span>
-              </li>
-              <li class="flex items-start gap-3 text-cream/90">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Groupes de 6 max</span>
-              </li>
-              <li class="flex items-start gap-3 text-cream/90">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Suivi personnalisé</span>
-              </li>
-              <li class="flex items-start gap-3 text-cream/90">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>19€/séance</span>
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Sans engagement
               </li>
             </ul>
-            <a href="#contact" class="block w-full bg-gradient-to-r from-gold to-terracotta text-white text-center px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
-              Choisir cette formule
-            </a>
-          </div>
-          
+            <a href="#contact" class="tarif-card__cta" id="cta-decouverte">Réserver l'essai</a>
+          </article>
+
+          <!-- Carnet 10 — Le plus populaire -->
+          <article class="tarif-card tarif-card--popular reveal reveal-delay-1">
+            <h3 class="tarif-card__name">Carnet 10 séances</h3>
+            <p class="tarif-card__sub">Pour s'engager en douceur</p>
+            <p class="tarif-price">190€</p>
+            <p class="tarif-note">* Valable 3 mois</p>
+            <ul class="tarif-card__list">
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                10 séances de Pilates
+              </li>
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Groupes de 6 max
+              </li>
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Suivi personnalisé
+              </li>
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                19€ / séance
+              </li>
+            </ul>
+            <a href="#contact" class="tarif-card__cta" id="cta-carnet">Choisir cette formule</a>
+          </article>
+
           <!-- Illimité -->
-          <div class="fade-in bg-gradient-to-br from-cream to-white rounded-3xl p-8 border-2 border-transparent hover:border-gold/40 transition-all card-hover">
-            <h3 class="font-serif text-2xl font-bold text-deep mb-2">Illimité mensuel</h3>
-            <p class="text-deep/60 text-sm mb-6">Pour les passionnés</p>
-            <div class="mb-8">
-              <span class="font-serif text-5xl font-bold text-deep">95€</span>
-              <span class="text-deep/60 text-sm block mt-1">par mois</span>
-            </div>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start gap-3 text-deep/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Séances illimitées</span>
+          <article class="tarif-card reveal reveal-delay-2">
+            <h3 class="tarif-card__name">Illimité mensuel</h3>
+            <p class="tarif-card__sub">Pour les passionnés</p>
+            <p class="tarif-price">95€</p>
+            <p class="tarif-note">par mois</p>
+            <ul class="tarif-card__list">
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Séances illimitées
               </li>
-              <li class="flex items-start gap-3 text-deep/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Sans engagement</span>
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Sans engagement
               </li>
-              <li class="flex items-start gap-3 text-deep/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Réservation prioritaire</span>
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Réservation prioritaire
               </li>
-              <li class="flex items-start gap-3 text-deep/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Bilan trimestriel offert</span>
+              <li>
+                <svg class="tarif-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Bilan trimestriel offert
               </li>
             </ul>
-            <a href="#contact" class="block w-full border-2 border-deep text-deep text-center px-6 py-3 rounded-full font-semibold hover:bg-deep hover:text-cream transition-all">
-              Choisir l'illimité
-            </a>
-          </div>
+            <a href="#contact" class="tarif-card__cta" id="cta-illimite">Choisir l'illimité</a>
+          </article>
+
         </div>
       </div>
     </section>
 
     <!-- ==================== TÉMOIGNAGES ==================== -->
-    <section id="temoignages" class="py-20 sm:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
-          <span class="text-terracotta font-semibold text-sm uppercase tracking-wider">Ils nous font confiance</span>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mt-3 mb-6">
-            Ce qu'ils en disent
+    <section class="temoignages" id="temoignages" aria-labelledby="temoignages-title">
+      <div class="container">
+
+        <header class="temoignages__header reveal">
+          <span class="t-label">Ils nous font confiance</span>
+          <h2 class="temoignages__h2" id="temoignages-title">
+            Ce qu'ils en disent.
           </h2>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Testimonial 1 -->
-          <div class="fade-in bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-            <div class="flex gap-1 mb-4">
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1......."/></svg>
+        </header>
+
+        <div role="list">
+
+          <!-- Témoignage 1 -->
+          <article class="temoignage-item reveal" role="listitem">
+            <img
+              class="temoignage-avatar"
+              src="media/portrait1.png"
+              alt="Portrait de Camille R., membre Studio Hélio"
+              loading="lazy"
+            />
+            <div>
+              <blockquote class="temoignage-quote">
+                « Mon mal de dos a disparu en 2 mois. Je n'aurais jamais cru que le Pilates puisse avoir un tel impact. »
+              </blockquote>
+              <p class="temoignage-author">— Camille R., membre depuis 4 mois</p>
             </div>
-            <p class="text-deep/80 text-lg leading-relaxed mb-6 font-serif italic">
-              « En 2 mois mon mal de dos a disparu. Je n'aurais jamais cru que le Pilates puisse avoir un tel impact. »
-            </p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-neutral rounded-full flex items-center justify-center font-serif font-bold text-deep">CR</div>
-              <div>
-                <p class="font-semibold text-deep">Camille R.</p>
-                <p class="text-sm text-deep/50">Membre depuis 4 mois</p>
-              </div>
+          </article>
+
+          <!-- Témoignage 2 -->
+          <article class="temoignage-item reveal" role="listitem">
+            <img
+              class="temoignage-avatar"
+              src="media/portrait2.jpg"
+              alt="Portrait de Marc D., membre Studio Hélio"
+              loading="lazy"
+            />
+            <div>
+              <blockquote class="temoignage-quote">
+                « Les petits groupes changent tout, on n'est pas un numéro. Le coach connaît ton nom et tes limites. »
+              </blockquote>
+              <p class="temoignage-author">— Marc D., membre depuis 6 mois</p>
             </div>
-          </div>
-          
-          <!-- Testimonial 2 -->
-          <div class="fade-in bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-            <div class="flex gap-1 mb-4">
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </article>
+
+          <!-- Témoignage 3 -->
+          <article class="temoignage-item reveal" role="listitem">
+            <img
+              class="temoignage-avatar"
+              src="media/portrait3.jpg"
+              alt="Portrait d'Inès B., membre Studio Hélio"
+              loading="lazy"
+            />
+            <div>
+              <blockquote class="temoignage-quote">
+                « Le seul sport que je n'ai pas lâché après 3 semaines. L'ambiance est juste parfaite. »
+              </blockquote>
+              <p class="temoignage-author">— Inès B., membre depuis 1 an</p>
             </div>
-            <p class="text-deep/80 text-lg leading-relaxed mb-6 font-serif italic">
-              « Les petits groupes changent tout, on n'est pas un numéro. Le coach connaît ton nom et tes limites. »
-            </p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-neutral rounded-full flex items-center justify-center font-serif font-bold text-deep">MD</div>
-              <div>
-                <p class="font-semibold text-deep">Marc D.</p>
-                <p class="text-sm text-deep/50">Membre depuis 6 mois</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Testimonial 3 -->
-          <div class="fade-in bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-            <div class="flex gap-1 mb-4">
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            </div>
-            <p class="text-deep/80 text-lg leading-relaxed mb-6 font-serif italic">
-              « Le seul sport que je n'ai pas lâché après 3 semaines. L'ambiance est juste parfaite. »
-            </p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-neutral rounded-full flex items-center justify-center font-serif font-bold text-deep">IB</div>
-              <div>
-                <p class="font-semibold text-deep">Inès B.</p>
-                <p class="text-sm text-deep/50">Membre depuis 1 an</p>
-              </div>
-            </div>
-          </div>
+          </article>
+
         </div>
       </div>
     </section>
 
     <!-- ==================== FAQ ==================== -->
-    <section id="faq" class="py-20 sm:py-28 bg-white">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 fade-in">
-          <span class="text-terracotta font-semibold text-sm uppercase tracking-wider">Questions fréquentes</span>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mt-3">
-            Tout ce que tu veux savoir
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+
+        <header class="faq__header reveal">
+          <span class="t-label">Questions fréquentes</span>
+          <h2 class="faq__h2" id="faq-title">
+            Tout ce que tu veux savoir.
           </h2>
-        </div>
-        
-        <div class="space-y-4 fade-in">
-          <!-- FAQ Item 1 -->
-          <div class="border border-neutral rounded-2xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left bg-transparent hover:bg-cream/50 transition-colors" aria-expanded="false" aria-controls="faq-answer-1">
-              <span class="font-serif text-lg font-semibold text-deep pr-4">Faut-il être souple pour commencer ?</span>
-              <svg class="faq-chevron w-5 h-5 text-terracotta flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
+        </header>
+
+        <div class="faq__list reveal">
+
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-1" id="faq-btn-1">
+              <span class="faq-toggle__q">Faut-il être souple pour commencer ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div id="faq-answer-1" class="faq-answer px-6">
-              <p class="text-deep/70 pb-5 leading-relaxed">
-                Non, justement ! Le Pilates est conçu pour améliorer ta souplesse progressivement. Nos coachs adaptent chaque exercice à ton niveau actuel. C'est en pratiquant que tu gagnes en amplitude, pas l'inverse.
-              </p>
+            <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">
+              <p>Non, justement ! Le Pilates est conçu pour améliorer ta souplesse progressivement. Nos coachs adaptent chaque exercice à ton niveau actuel. C'est en pratiquant que tu gagnes en amplitude, pas l'inverse.</p>
             </div>
           </div>
-          
-          <!-- FAQ Item 2 -->
-          <div class="border border-neutral rounded-2xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left bg-transparent hover:bg-cream/50 transition-colors" aria-expanded="false" aria-controls="faq-answer-2">
-              <span class="font-serif text-lg font-semibold text-deep pr-4">Combien de fois par semaine ?</span>
-              <svg class="faq-chevron w-5 h-5 text-terracotta flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-2" id="faq-btn-2">
+              <span class="faq-toggle__q">Combien de fois par semaine ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div id="faq-answer-2" class="faq-answer px-6">
-              <p class="text-deep/70 pb-5 leading-relaxed">
-                De 1 à 3 séances par semaine, selon ton objectif. Pour maintenir une bonne mobilité, 1 à 2 fois suffisent. Pour transformer ton corps et gagner en force, vise 3 séances régulières. On t'aide à trouver le rythme idéal lors de ton bilan.
-              </p>
+            <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2">
+              <p>De 1 à 3 séances par semaine, selon ton objectif. Pour maintenir une bonne mobilité, 1 à 2 fois suffisent. Pour transformer ton corps et gagner en force, vise 3 séances régulières. On t'aide à trouver le rythme idéal lors de ton bilan.</p>
             </div>
           </div>
-          
-          <!-- FAQ Item 3 -->
-          <div class="border border-neutral rounded-2xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left bg-transparent hover:bg-cream/50 transition-colors" aria-expanded="false" aria-controls="faq-answer-3">
-              <span class="font-serif text-lg font-semibold text-deep pr-4">C'est adapté après une blessure ?</span>
-              <svg class="faq-chevron w-5 h-5 text-terracotta flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-3" id="faq-btn-3">
+              <span class="faq-toggle__q">C'est adapté après une blessure ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div id="faq-answer-3" class="faq-answer px-6">
-              <p class="text-deep/70 pb-5 leading-relaxed">
-                Oui, avec l'accord de ton médecin. Le Pilates est souvent recommandé en rééducation car il renforce les muscles profonds sans impact. Nos coachs sont formés pour adapter les exercices aux contraintes médicales. N'hésite pas à nous en parler lors du bilan.
-              </p>
+            <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3">
+              <p>Oui, avec l'accord de ton médecin. Le Pilates est souvent recommandé en rééducation car il renforce les muscles profonds sans impact. Nos coachs sont formés pour adapter les exercices aux contraintes médicales. N'hésite pas à nous en parler lors du bilan.</p>
             </div>
           </div>
-          
-          <!-- FAQ Item 4 -->
-          <div class="border border-neutral rounded-2xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left bg-transparent hover:bg-cream/50 transition-colors" aria-expanded="false" aria-controls="faq-answer-4">
-              <span class="font-serif text-lg font-semibold text-deep pr-4">Comment j'annule un cours ?</span>
-              <svg class="faq-chevron w-5 h-5 text-terracotta flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-4" id="faq-btn-4">
+              <span class="faq-toggle__q">Comment j'annule un cours ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div id="faq-answer-4" class="faq-answer px-6">
-              <p class="text-deep/70 pb-5 leading-relaxed">
-                Jusqu'à 12h avant le début du cours, sans frais ni pénalité. Il te suffit de nous envoyer un message ou un email. Au-delà de ce délai, la séance est décomptée de ton carnet. On comprend que des imprévus arrivent !
-              </p>
+            <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4">
+              <p>Jusqu'à 12h avant le début du cours, sans frais ni pénalité. Il te suffit de nous envoyer un message ou un email. Au-delà de ce délai, la séance est décomptée de ton carnet. On comprend que des imprévus arrivent&nbsp;!</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ==================== CONTACT / RÉSERVATION ==================== -->
-    <section id="contact" class="py-20 sm:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          <!-- Left: Info + CTA -->
-          <div class="fade-in">
-            <span class="text-terracotta font-semibold text-sm uppercase tracking-wider">Réserve maintenant</span>
-            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mt-3 mb-6">
-              Ton premier cours<br/>est offert
+    <!-- ==================== CONTACT / CTA FINAL ==================== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__inner">
+
+          <!-- Gauche : titre + infos -->
+          <div class="reveal">
+            <span class="t-label" style="color: rgba(255,255,255,0.5)">Réserve maintenant</span>
+            <h2 class="contact__h2" id="contact-title">
+              Ton premier cours<br/>est offert.
             </h2>
-            <p class="text-deep/70 text-lg mb-10 leading-relaxed">
-              Remplis le formulaire ci-contre et on te recontacte sous 24h pour confirmer ton créneau. Sans engagement, sans pression.
-            </p>
-            
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-terracotta/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-deep">Adresse</p>
-                  <p class="text-deep/70">12 rue des Remparts, Bordeaux</p>
-                </div>
+            <div class="contact__info">
+              <div class="contact__info-item">
+                <strong>Adresse</strong>
+                12 rue des Remparts, Bordeaux
               </div>
-              
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-terracotta/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-deep">Horaires</p>
-                  <p class="text-deep/70">Lundi au Samedi · 7h – 21h</p>
-                </div>
+              <div class="contact__info-item">
+                <strong>Horaires</strong>
+                Lundi au Samedi · 7h – 21h
               </div>
-              
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-terracotta/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-deep">Email</p>
-                  <a href="mailto:hello@studiohelio.fr" class="text-deep/70 hover:text-terracotta transition-colors">hello@studiohelio.fr</a>
-                </div>
+              <div class="contact__info-item">
+                <strong>Email</strong>
+                <a href="mailto:hello@studiohelio.fr" style="color:rgba(255,255,255,0.6)">hello@studiohelio.fr</a>
               </div>
-              
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-terracotta/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-deep">Téléphone</p>
-                  <a href="tel:+33556000000" class="text-deep/70 hover:text-terracotta transition-colors">05 56 00 00 00</a>
-                </div>
+              <div class="contact__info-item">
+                <strong>Téléphone</strong>
+                <a href="tel:+33556000000" style="color:rgba(255,255,255,0.6)">05 56 00 00 00</a>
               </div>
             </div>
           </div>
-          
-          <!-- Right: Form -->
-          <div class="fade-in">
-            <form id="booking-form" class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl" novalidate>
-              <h3 class="font-serif text-2xl font-bold text-deep mb-6">Réserver mon cours d'essai</h3>
-              
-              <div class="space-y-5">
-                <!-- Nom -->
-                <div>
-                  <label for="form-nom" class="block text-sm font-semibold text-deep mb-2">Nom complet *</label>
-                  <input 
-                    type="text" 
-                    id="form-nom" 
-                    name="nom" 
-                    required 
-                    placeholder="Camille Dupont"
-                    class="w-full px-4 py-3 rounded-xl border border-neutral bg-cream/30 text-deep placeholder-deep/40 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all"
-                  />
-                  <p class="error-msg" id="error-nom">Merci d'indiquer votre nom.</p>
+
+          <!-- Droite : formulaire flottant -->
+          <div class="reveal reveal-delay-2">
+            <div class="contact__form-wrap">
+              <form id="booking-form" novalidate aria-label="Formulaire de réservation">
+                <h3 class="form-title">Réserver mon cours d'essai</h3>
+
+                <div id="form-fields">
+                  <div class="form-group">
+                    <label for="form-nom">Nom complet</label>
+                    <input type="text" id="form-nom" name="nom" required placeholder="Camille Dupont" autocomplete="name" />
+                    <p class="error-msg" id="error-nom" role="alert">Merci d'indiquer votre nom.</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="form-email">Email</label>
+                    <input type="email" id="form-email" name="email" required placeholder="camille@email.com" autocomplete="email" />
+                    <p class="error-msg" id="error-email" role="alert">Merci d'indiquer un email valide.</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="form-phone">Téléphone</label>
+                    <input type="tel" id="form-phone" name="phone" required placeholder="06 12 34 56 78" pattern="[0-9\s]{10,}" autocomplete="tel" />
+                    <p class="error-msg" id="error-phone" role="alert">Merci d'indiquer un numéro valide (10 chiffres).</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="form-slot">Créneau souhaité</label>
+                    <select id="form-slot" name="slot" required>
+                      <option value="" disabled selected>Choisis un créneau</option>
+                      <option value="matin-semaine">Matin en semaine (7h–12h)</option>
+                      <option value="midi">Pause déjeuner (12h–14h)</option>
+                      <option value="apres-midi">Après-midi (14h–18h)</option>
+                      <option value="soir">Soir (18h–21h)</option>
+                      <option value="weekend">Week-end</option>
+                    </select>
+                    <p class="error-msg" id="error-slot" role="alert">Merci de choisir un créneau.</p>
+                  </div>
+
+                  <button type="submit" id="submit-btn" class="form-submit">
+                    Réserver mon cours gratuit
+                  </button>
                 </div>
-                
-                <!-- Email -->
-                <div>
-                  <label for="form-email" class="block text-sm font-semibold text-deep mb-2">Email *</label>
-                  <input 
-                    type="email" 
-                    id="form-email" 
-                    name="email" 
-                    required 
-                    placeholder="camille@email.com"
-                    class="w-full px-4 py-3 rounded-xl border border-neutral bg-cream/30 text-deep placeholder-deep/40 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all"
-                  />
-                  <p class="error-msg" id="error-email">Merci d'indiquer un email valide.</p>
+
+                <!-- Message de succès -->
+                <div id="success-message" class="hidden" aria-live="polite">
+                  <div class="success-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <h4>Merci !</h4>
+                  <p>On te recontacte sous 24h pour confirmer ton créneau.<br/>À très vite au studio&nbsp;!</p>
                 </div>
-                
-                <!-- Téléphone -->
-                <div>
-                  <label for="form-phone" class="block text-sm font-semibold text-deep mb-2">Téléphone *</label>
-                  <input 
-                    type="tel" 
-                    id="form-phone" 
-                    name="phone" 
-                    required 
-                    placeholder="06 12 34 56 78"
-                    pattern="[0-9]{10}"
-                    class="w-full px-4 py-3 rounded-xl border border-neutral bg-cream/30 text-deep placeholder-deep/40 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all"
-                  />
-                  <p class="error-msg" id="error-phone">Merci d'indiquer un numéro valide (10 chiffres).</p>
-                </div>
-                
-                <!-- Créneau souhaité -->
-                <div>
-                  <label for="form-slot" class="block text-sm font-semibold text-deep mb-2">Créneau souhaité *</label>
-                  <select 
-                    id="form-slot" 
-                    name="slot" 
-                    required
-                    class="w-full px-4 py-3 rounded-xl border border-neutral bg-cream/30 text-deep focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all appearance-none cursor-pointer"
-                  >
-                    <option value="" disabled selected>Choisis un créneau</option>
-                    <option value="matin-semaine">Matin en semaine (7h-12h)</option>
-                    <option value="midi">Pause déjeuner (12h-14h)</option>
-                    <option value="apres-midi">Après-midi (14h-18h)</option>
-                    <option value="soir">Soir (18h-21h)</option>
-                    <option value="weekend">Week-end</option>
-                  </select>
-                  <p class="error-msg" id="error-slot">Merci de choisir un créneau.</p>
-                </div>
-                
-                <!-- Submit -->
-                <button 
-                  type="submit" 
-                  id="submit-btn"
-                  class="w-full bg-terracotta text-white py-4 rounded-xl font-semibold text-base hover:bg-terracotta-dark transition-all shadow-lg shadow-terracotta/20 mt-2"
-                >
-                  Réserver mon cours gratuit
-                </button>
-              </div>
-              
-              <!-- Success Message -->
-              <div id="success-message" class="hidden text-center py-8">
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                </div>
-                <h4 class="font-serif text-2xl font-bold text-deep mb-2">Merci !</h4>
-                <p class="text-deep/70">On te recontacte sous 24h pour confirmer ton créneau.<br/>À très vite au studio !</p>
-              </div>
-            </form>
+
+              </form>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-deep text-cream/80 py-12 sm:py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-10 mb-10">
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
         <div>
-          <p class="font-serif text-2xl font-bold text-cream mb-4">Studio Hélio</p>
-          <p class="text-sm leading-relaxed max-w-xs">
-            Pilates & mobilité à Bordeaux. Petits groupes, coachs diplômés, suivi personnalisé. Renforce ton corps sans le casser.
-          </p>
+          <a href="#" class="footer__logo">Studio Hélio</a>
+          <p class="footer__desc">Pilates &amp; mobilité à Bordeaux. Petits groupes, coachs diplômés, suivi personnalisé. Renforce ton corps sans le casser.</p>
         </div>
-        
+
         <div>
-          <h4 class="font-semibold text-cream mb-4">Navigation</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#piliers" class="hover:text-terracotta transition-colors">Bénéfices</a></li>
-            <li><a href="#methode" class="hover:text-terracotta transition-colors">Méthode</a></li>
-            <li><a href="#tarifs" class="hover:text-terracotta transition-colors">Tarifs</a></li>
-            <li><a href="#temoignages" class="hover:text-terracotta transition-colors">Témoignages</a></li>
-            <li><a href="#faq" class="hover:text-terracotta transition-colors">FAQ</a></li>
+          <h3 class="footer__col-title">Navigation</h3>
+          <ul class="footer__links">
+            <li><a href="#piliers">Bénéfices</a></li>
+            <li><a href="#methode">Méthode</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
-        
+
         <div>
-          <h4 class="font-semibold text-cream mb-4">Contact</h4>
-          <ul class="space-y-2 text-sm">
+          <h3 class="footer__col-title">Contact</h3>
+          <ul class="footer__links">
             <li>12 rue des Remparts, Bordeaux</li>
-            <li>Lun-Sam · 7h-21h</li>
-            <li><a href="mailto:hello@studiohelio.fr" class="hover:text-terracotta transition-colors">hello@studiohelio.fr</a></li>
-            <li><a href="tel:+33556000000" class="hover:text-terracotta transition-colors">05 56 00 00 00</a></li>
+            <li>Lun–Sam · 7h–21h</li>
+            <li><a href="mailto:hello@studiohelio.fr">hello@studiohelio.fr</a></li>
+            <li><a href="tel:+33556000000">05 56 00 00 00</a></li>
           </ul>
         </div>
+
       </div>
-      
-      <div class="border-t border-cream/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-cream/50">
-        <p>&copy; 2026 Studio Hélio. Tous droits réservés.</p>
-        <p>Conçu avec soin à Bordeaux.</p>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Studio Hélio. Tous droits réservés.</p>
+        <p class="footer__copy">Conçu avec soin à Bordeaux.</p>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== JAVASCRIPT ==================== -->
   <script src="script.js"></script>
 </body>
 </html>
-
